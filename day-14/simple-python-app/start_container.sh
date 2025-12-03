@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-# Pull the Docker image from Docker Hub
-docker pull vicky1306/simple-python-flask-app
+echo "Pulling latest Docker image..."
+docker pull vicky1306/simple-python-flask-app:latest
 
-# Run the Docker image as a container
-docker run -d -p 5000:5000 vicky1306/simple-python-flask-app
+echo "Starting container on port 5000..."
+docker run -d -p 5000:5000 --name simple-flask-app vicky1306/simple-python-flask-app:latest
